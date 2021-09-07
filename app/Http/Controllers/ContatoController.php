@@ -11,6 +11,13 @@ class ContatoController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+    public function contato()
+    {
+        return view('site.contato');
+    }
+
+
     public function index()
     {
         //

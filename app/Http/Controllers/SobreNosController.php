@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class SobreNosController extends Controller
 {
@@ -11,9 +12,15 @@ class SobreNosController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+    public function sobreNos(){
+        return view('site.sobre-nos');
+    }
+
+
     public function index()
     {
-        //
+        
     }
 
     /**

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class PrincipalController extends Controller
 {
@@ -11,9 +12,10 @@ class PrincipalController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
     public function index()
     {
-        //
+        return view('site.principal');
     }
 
     /**
