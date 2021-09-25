@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Contato;
 
 class ContatoController extends Controller
 {
@@ -12,16 +13,15 @@ class ContatoController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-    public function contato()
+    public function contato(request $request)
     {
-        // var_dump($_POST);
-        return view('site.contato',['titulo' => 'Contato'],['horas' => '72hrs']);
+
     }
 
 
     public function index()
     {
-        //
+        return view('site.contato',['titulo' => 'Contato'],['horas' => '72hrs']);
     }
 
     /**
@@ -31,7 +31,7 @@ class ContatoController extends Controller
      */
     public function create()
     {
-        //
+
     }
 
     /**
@@ -42,7 +42,18 @@ class ContatoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // Contato::create($request->all());
+
+        $request->validate([
+            'nome'              => 'required|min:3|max:40',
+            'telefone'          => 'required',
+            'email'             => 'required',
+            'motivo_contato'    => 'required',
+            'mensagem'          => 'required|min:10|max:200'
+        ]);
+
+        return view('site.contato',['titulo' => 'Contato'],['horas' => '72hrs']);
+
     }
 
     /**

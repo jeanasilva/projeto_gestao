@@ -18,8 +18,9 @@ use App\Http\Controllers\ContatoController;
 
 Route::get('/', [PrincipalController::class, 'index'])->name('site.index');
 Route::get('/sobre-nos', [SobreNosController::class, 'sobreNos'])->name('site.sobrenos');
-Route::get('/contato', [ContatoController::class, 'contato'])->name('site.contato');
-Route::post('/contato', [ContatoController::class, 'contato'])->name('site.contato');
+Route::get('/contato', [ContatoController::class, 'index'])->name('site.contato');
+Route::post('/contato', [ContatoController::class, 'store'])->name('site.contato');
+// Route::resource('contato', [ContatoController::class, 'index'])->name('site.contato');
 Route::get('/login', function(){ return 'Login'; })->name('site.login');
 
 Route::prefix('/app')->group(function() {
